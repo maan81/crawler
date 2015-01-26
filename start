@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+
+// $source_url = 'http://facebook.com';
+$source_url = 'http://modelnepal.com';
+// $source_url = 'http://www.google.com.np';
+// $source_url = 'http://apt.org.np';
+// $source_url = 'http://localhost/all_forms';
+$cur_url = null;
+$depth=3;
+$links = array();
+
+
+require('phpquery_helper.php');
+require('get_contents.php');
+
+$cur_url = $source_url;
+
+$links = get_contents($cur_url,$depth,$links);
+
+echo PHP_EOL.PHP_EOL;
+print_r('results : ');
+print_r($links);
